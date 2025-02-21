@@ -1,7 +1,7 @@
 
 # SVCK: SystemVerilog Checker - Linter
 
-**SVCK** is an open-source linter tool designed to enforce style and consistency rules for SystemVerilog code. It provides a framework for **Build Your Own Linter** (**BYOL**), allowing users to create their own custom lint rules while benefiting from built-in checks such as proper encapsulation, naming conventions, line spacing, and other cosmetic rules. This linter integrates seamlessly into your development pipeline to ensure consistent, high-quality code.
+**SVCK** is an open-source **minimalist** linter tool designed to enforce style and consistency rules for SystemVerilog code. It provides a framework for **Build Your Own Linter** (**BYOL**), allowing users to create their own custom lint rules while benefiting from built-in checks such as proper encapsulation, naming conventions, line spacing, and other cosmetic rules. This linter integrates seamlessly into your development pipeline to ensure consistent, high-quality code.
 
 ## Table of Contents
 

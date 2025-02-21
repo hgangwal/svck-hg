@@ -67,6 +67,8 @@ cd svck
 
 See: https://github.com/chipsalliance/verible
 
+3. pip install anytree
+
 ## Usage
 
 ### Running the Linter from Command Line

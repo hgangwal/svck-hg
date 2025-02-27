@@ -1,7 +1,13 @@
+// ----------------------------------------------------
+//SPDX-FileCopyrightText: AsFigo Technologies, UK
+//SPDX-FileCopyrightText: VerifWorks, India
+// SPDX-License-Identifier: MIT
+//-----------------------------------------------------
+
 package my_pkg;  // Encapsulating related classes
 
   class Transaction;
-    int data;
+   local int data;
     
     function new();
       data = 0;
@@ -13,7 +19,7 @@ package my_pkg;  // Encapsulating related classes
   endclass
 
   class Driver;
-    Transaction txn;
+   local Transaction txn;
 
     function new();
       txn = new();

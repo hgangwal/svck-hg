@@ -62,12 +62,15 @@ git clone https://github.com/AsFigo/svck.git
 cd svck
 ```
 
-2. Install required dependencies - Verible mainly
+2. Install Verible mainly
 
+  See: https://github.com/chipsalliance/verible
+  For fast setup, we recommend using pre-built binaries from:
+    https://github.com/chipsalliance/verible/releases
 
-See: https://github.com/chipsalliance/verible
+3. Install required Python packages:
 
-3. pip install anytree
+  pip install -r requirements.txt
 
 ## Usage
 

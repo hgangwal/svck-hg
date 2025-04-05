@@ -29,7 +29,7 @@ class NoNestedIfRule(AsFigoLintRule):
                    
                 if (level >= 4):
                     message = f"Found 4 or more nested if loops: {varNode.text} in file: {filePath}"
-                    self.linter.logViolation("R115",message)
+                    self.linter.logViolation("R120",message)
 
 
 

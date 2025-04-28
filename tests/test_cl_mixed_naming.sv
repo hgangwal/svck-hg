@@ -1,3 +1,4 @@
+package p1;
 class c;
   protected int state_snake_name_1;
   rand int camelCaseName2;
@@ -10,3 +11,4 @@ class c2;
   local int lvar_i1;
   local int prot_i1;
 endclass : c2
+endpackage: p1

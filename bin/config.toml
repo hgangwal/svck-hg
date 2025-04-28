@@ -1,0 +1,14 @@
+title = "AsFigo Linter Rules TOML file"
+
+[[rules]]
+id = 120
+name = "Nested-Conditions"
+enable = true
+
+[[rules]]
+id = 115
+name = "Package-Encapsulation"
+enable = true
+
+
+

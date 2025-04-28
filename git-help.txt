@@ -1,0 +1,220 @@
+
+# if you want to commit code it is better to check out from ssh path
+git clone git@github.com:hgangwal/svck-hg.git
+cd scvk-hg
+
+# How to setup the env
+# first install conda if you don't have it
+# https://www.anaconda.com/docs/getting-started/miniconda/install#macos-linux-installation:how-do-i-verify-my-installers-integrity
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+bash ~/Miniconda3-latest-Linux-x86_64.sh
+source ~/.bashrc
+
+# create new env for svck
+conda create --name svck python=3.9
+# go inside conda env
+conda activate svck
+
+# in svck-hg directory
+pip install -r requirements.txt
+
+# run a test
+cd examples
+make 
+
+# run our new tests
+cd tests 
+make 
+
+
+
+# check how many branches are there with their name
+git branch
+
+# switch to a particular branch (note changing to a branch will replace common
+# files with the one with the branch content of file)
+git switch myworkingbranch
+# alternative is to use checkout
+git checkout myworkingbranch
+
+# get the current status of local directory
+git status
+
+# see the history of changes in the git
+git log 
+
+# add new files to commit
+git add <filenames>
+
+# add the commit message
+git commit -m "write a helpful message."
+
+# publish changes to the remote git hub repository. If branch has never been 
+# pushed to remote, remote doesn't know and we need to add remote head name.
+# if you do git push command it will show the command below
+git push --set-upstream origin myworkingbranch
+
+
+# ssh related precautions *** IMPORTANT ***
+# ssh directory, private file and public key needs to be secured
+# .ssh only user accessible
+chmod 700 ~/.ssh
+# private key only user read/write
+chmod 600 ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_ed25519
+chmod 600 ~/.ssh/id_ed25519_himank
+chmod 600 ~/.ssh/id_rsa_himank
+# public key  user read/write and the rest read only
+chmod 644 ~/.ssh/*.pub
+ 
+# set git config
+git config --global user.name "Himank Gangwal"
+git config  user.name "Himank Gangwal"
+git config --global user.email "himankgangwal007@gmail.com"
+git config user.email "himankgangwal007@gmail.com"
+git config --list
+
+
+# config file for ssh can point to a particular key
+Host github.com
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_ed25519_himank
+
+# more info branch https://www.git-tower.com/learn/git/faq/create-branch 
+# delete a local branch
+git branch -d <branch name>
+
+# create new branch and switch
+git checkout -b new_branch_name
+# now a day one can also use
+git switch -c new_branch_name
+
+# https://www.atlassian.com/git/tutorials/saving-changes/git-stash 
+# stash (save work for later to comeback, it is replacement of making a full copy of directory for backup)
+# adding a comment helps in understanding what is in the stash
+git stash save  "clean nestedcondition, package rule, and added toml file exploration."
+
+# to run the tests
+cd tests
+make
+
+# whre is the config.toml file
+# it is located in bin directory
+
+
+# Appendix (user permission source https://unix.stackexchange.com/questions/626143/sign-and-send-pubkey-signing-failed-for-rsa-key-from-agent-agent-refused-oper)
+Make sure the permissions of the key directory and keys are correct on the client. The ~/.ssh directory should only have execute, read and write permissions for the user. If not then change them:
+
+User can execute, read and write
+
+chmod 700 ~/.ssh
+
+For the private keys and also the id_rsa, user can read and write
+
+chmod 600 ~/.ssh/id_rsa
+
+For the public keys, user can read and write, others can read
+
+chmod 644 ~/.ssh/*.pub
+
+Share
+Improve this answer
+
+
+
+
+# to write tomli file need tomli_w package
+pip install tomli_w
+
+# to uninstall a package using pip
+pip uninstall toml
+
+
+
+
+
+#######################################################
+# How to Contribute to Open Source Projects on GitHub
+########################################################
+
+Make a GitHub Account
+If you don't already have one: github.com
+
+Set Up Git Locally
+
+Install Git: git-scm.com
+
+Set your username and email:
+
+
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+Find a Project You Like
+
+Look for beginner-friendly labels: good first issue, help wanted.
+
+Good places to find projects:
+
+goodfirstissue.dev
+
+firstcontributions.github.io
+
+Explore topics you like on GitHub (search by language, interest, etc.)
+
+Fork the Repository
+
+Click the Fork button at the top-right of the project page.
+
+This creates your own copy of the project.
+
+Clone Your Fork Locally
+
+
+git clone https://github.com/your-username/project-name.git
+cd project-name
+Create a New Branch
+
+
+git checkout -b your-branch-name
+(Make a branch name related to the issue you're solving, like fix-typo.)
+
+Make Changes Locally
+
+Edit the files.
+
+Test your changes if possible.
+
+Commit Your Changes
+
+
+git add .
+git commit -m "Clear and meaningful commit message"
+Push to Your GitHub Fork
+
+
+git push origin your-branch-name
+Create a Pull Request (PR)
+
+Go back to the original project on GitHub.
+
+Click "Compare & Pull Request".
+
+Write a short, clear description of what you did.
+
+Submit it!
+
+Respond to Feedback
+
+Maintainers might ask you to make changes — that’s normal!
+
+Push updates to your branch, and they will show up automatically.
+
+🌟 Tips
+Start small (fix typos, improve documentation, tiny bug fixes).
+
+Be respectful and patient — open source maintainers are often volunteers.
+
+Read the contributing guidelines (often in a file called CONTRIBUTING.md).
+
+Add yourself to CONTRIBUTORS.md if the project has one.

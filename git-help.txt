@@ -8,7 +8,7 @@ cd scvk-hg
 # https://www.anaconda.com/docs/getting-started/miniconda/install#macos-linux-installation:how-do-i-verify-my-installers-integrity
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
-bash ~/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
 source ~/.bashrc
 
 # create new env for svck

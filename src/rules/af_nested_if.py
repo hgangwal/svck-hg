@@ -13,24 +13,19 @@ class NoNestedIfRule(AsFigoLintRule):
     def apply(self, filePath: str, data: AsFigoLintRule.VeribleSyntax.SyntaxData):
         # an array storing depth values and the index indicates the level of nesting
         # in anytree the depth values are monotonically increasing with nesting
+        # level = 0
         depthStore = [0]
         for classNode in data.tree.iter_find_all({"tag": "kClassDeclaration"}):
             className = self.getClassName(classNode)
-            max_value = 0
+            # max_value = 0
             # filter both case and if using ConditionalStatement and CaseStatement
             # change the order of iteration to be preOdrder to walk to code line by line
             for varNode in classNode.iter_find_all(filter_={"tag": ["kConditionalStatement", "kCaseStatement"]}, iter_=AsFigoLintRule.VeribleSyntax.PreOrderTreeIterator):
-                if (varNode.depth > max_value):
-                    depthStore.append(varNode.depth)
-                    max_value = depthStore[len(depthStore)-1]
-                    
-                level = depthStore.index(varNode.depth)
+                level = varNode.depth // 5
                    
                 if (level >= 4):
                     message = f"Found 4 or more nested if loops: {varNode.text} in file: {filePath}"
                     self.linter.logViolation("R120",message)
-
-
 
         
               

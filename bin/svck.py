@@ -26,7 +26,7 @@ class svckLinter(AsFigoLinter):
     def __init__(self, configFile, logLevel=logging.INFO):
         super().__init__(configFile=configFile, logLevel=logLevel)
         # Automatically discover and register all subclasses of AsFigoLintRule
-        self.rules = [rule_cls(self) for rule_cls in AsFigoLintRule._subclasses_()]
+        self.rules = [rule_cls(self) for rule_cls in AsFigoLintRule.__subclasses__()]
 
     def loadSyntaxTree(self):
         """Loads Verilog syntax tree using VeribleVerilogSyntax."""

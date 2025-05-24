@@ -23,12 +23,8 @@ class svckLinter(AsFigoLinter):
 
     def __init__(self, configFile, logLevel=logging.INFO):
         super().__init__(configFile=configFile, logLevel=logLevel)
-        self.rules = [
-            NoGlobalVarsRule(self),
-            VarNamingConsistencyRule(self),
-            EncapsulationRule(self),
-            NoGenericMBXRule(self),
-            NoNestedIfRule(self)]
+        # Automatically discover and register all subclasses of AsFigoLintRule
+        self.rules = [rule_cls(self) for rule_cls in AsFigoLintRule._subclasses_()]
 
     def loadSyntaxTree(self):
         """Loads Verilog syntax tree using VeribleVerilogSyntax."""

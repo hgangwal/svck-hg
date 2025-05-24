@@ -12,6 +12,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src'
 import logging
 import verible_verilog_syntax
 from asfigo_linter import AsFigoLinter
+from af_lint_rule import AsFigoLintRule
 from rules.af_no_global_vars import NoGlobalVarsRule
 from rules.af_var_naming_consistency import VarNamingConsistencyRule
 from rules.af_encapsulation import EncapsulationRule
